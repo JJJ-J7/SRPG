@@ -1,8 +1,8 @@
 import * as UI from '../UIcomponents/index.js';
 
-export class SceneSelectTribe extends Phaser.Scene {
+export class SceneGameMode extends Phaser.Scene {
   constructor() {
-    super({ key: 'SceneSelectTribe' });
+    super({ key: 'SceneGameMode' });
   }
 
   create() {
@@ -15,7 +15,7 @@ export class SceneSelectTribe extends Phaser.Scene {
     
     // 0. ヘッダー
         this.header = new UI.UI_TxtBox({
-          text: 'Select your Tribe',
+          text: 'Customize Game Mode',
           backgroundColor: 'transparent',
           textColor: UI.UI_ThemeColors.txtDark,
           fontSize: UI.UI_FontSize.header,
@@ -44,7 +44,7 @@ export class SceneSelectTribe extends Phaser.Scene {
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: 'SceneGameMode' // シーン遷移のための設定
+      gotoScene: 'SceneGame' // シーン遷移のための設定
     });
 
     this.btnContinue = new UI.UI_TxtBtn({
