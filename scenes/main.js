@@ -2,6 +2,7 @@ import { SceneUiTest } from '../debugScenes/SceneUiTest.js';
 import { SceneUiTest2 } from '../debugScenes/SceneUiTest2.js';
 import { SceneOther } from '../debugScenes/SceneOther.js';
 import { SceneMainMenu } from './SceneMainMenu.js';
+import { SceneSelectTribe } from './SceneSelectTribe.js'; 
 
 // IndexedDBラッパーの初期化・永続化
 let dbPromise;
@@ -47,7 +48,8 @@ const config = {
     SceneUiTest,
     SceneUiTest2,
     SceneOther,
-    SceneMainMenu
+    SceneMainMenu,
+    SceneSelectTribe,
   ]
 };
 

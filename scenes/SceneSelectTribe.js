@@ -1,8 +1,8 @@
 import * as UI from '../UIcomponents/index.js';
 
-export class SceneMainMenu extends Phaser.Scene {
+export class SceneSelectTribe extends Phaser.Scene {
   constructor() {
-    super({ key: 'SceneMainMenu' });
+    super({ key: 'SceneSelectTribe' });
   }
 
   create() {
@@ -13,18 +13,19 @@ export class SceneMainMenu extends Phaser.Scene {
     this.events.on('shutdown', this.shutdown, this);
     this.events.on('destroy', this.shutdown, this);
     
-    // 0. ゲーム名
-    this.textBox = new UI.UI_TxtBox({
-      text: 'SRPG',
-      backgroundColor: 'transparent',
-      textColor: UI.UI_ThemeColors.txtDark,
-      fontSize: 48,
-      parent: document.body,
-      position: 'fixed',
-      left: '50%',
-      top: '20%',
-      className: 'sample-ui-textbox'
-    });
+    // 0. ヘッダー
+        this.header = new UI.UI_TxtBox({
+          text: 'Select your Tribe',
+          backgroundColor: 'transparent',
+          textColor: UI.UI_ThemeColors.txtDark,
+          fontSize: UI.UI_FontSize.header,
+          parent: document.body,
+          position: 'fixed',
+          left: '2%',
+          top: '2%',
+          className: 'sample-ui-textbox',
+          center: false,
+        });
 
     // 1. テキストボタン（中央やや上）
     this.btnNewGame = new UI.UI_TxtBtn({
@@ -39,11 +40,11 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: document.body,
       position: 'fixed',
       left: '50%',
-      top: '40%',
+      top: '20%',
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: 'SceneSelectTribe' // シーン遷移のための設定
+      gotoScene: 'SceneUiTest' // シーン遷移のための設定
     });
 
     this.btnContinue = new UI.UI_TxtBtn({
@@ -58,7 +59,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: document.body,
       position: 'fixed',
       left: '50%',
-      top: '50%',
+      top: '30%',
       zIndex: 1000,
       width: 200,
     });
@@ -75,7 +76,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: document.body,
       position: 'fixed',
       left: '50%',
-      top: '60%',
+      top: '40%',
       zIndex: 1000,
       width: 200,
       scene: this,
