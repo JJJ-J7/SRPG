@@ -18,6 +18,7 @@ export class SceneSelectMode extends Phaser.Scene {
         // 戻り元シーン名をdata.fromから取得（なければSceneUiTest）
     const data = arguments[0] || {};
     const returnScene = data.from || 'SceneUiTest';
+    //console.log(`Will Back to: ${returnScene}`);
 
     // 0. UI親
     this.uiParent = new UI.UI_FreeContainer({
