@@ -1,8 +1,8 @@
 import * as UI from '../UIcomponents/index.js';
 
-export class SceneMainMenu extends Phaser.Scene {
+export class SceneGame extends Phaser.Scene {
   constructor() {
-    super({ key: 'SceneMainMenu' });
+    super({ key: 'SceneGame' });
   }
 
   create() {
@@ -36,9 +36,24 @@ export class SceneMainMenu extends Phaser.Scene {
     // DOMフェードイン
     this.uiParent.fadeIn({ delay: UI.UI_Settings.crossFadeDelay });
 
+    // 4. テキストボックス（中央やや下）
+    this.header = new UI.UI_TxtBox({
+      text: 'Game',
+      backgroundColor: 'transparent',
+      textColor: '#000',
+      fontSize: 32,
+      parent: this.uiParent.el,
+      position: 'fixed',
+      left: '5%',
+      top: '5%',
+      center: false,
+      className: 'sample-ui-textbox',
+      scene: this, // 現在のシーンを設定
+    });    
+
     // 1. テキストボタン（中央やや上）
     this.btnNewGame = new UI.UI_TxtBtn({
-      text: 'New Game',
+      text: 'End Game',
       backgroundColor: '#007bff',
       textColor: '#fff',
       fontFamily: 'sans-serif',
@@ -49,11 +64,11 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '10%',
+      top: '30%',
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: 'SceneSelectTribe' // シーン遷移のための設定
+      gotoScene: 'SceneMainMenu' // シーン遷移のための設定
     });
 
     this.btnContinue = new UI.UI_TxtBtn({
@@ -68,7 +83,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '20%',
+      top: '40%',
       zIndex: 1000,
       width: 200,
       scene: this,
@@ -86,11 +101,11 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '30%',
+      top: '50%',
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: 'SceneSettings' // 設定シーンへの遷移
+      gotoScene: 'SceneMainMenu' // シーン遷移のための設定
     });
 
   }
