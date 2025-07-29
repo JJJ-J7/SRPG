@@ -21,7 +21,7 @@
 1. このリポジトリをリモートリポジトリとして追加する
 
    ```powershell
-   git remote add uic https://github.com/JJJ-J7/UIComponets.git   # uic リモートリポジトリ名。任意の文字列。
+   git remote add uic https://github.com/JJJ-J7/UIComponents.git   # uic リモートリポジトリ名。任意の文字列。
    ```
 
 2. 別リポジトリで、コミットする（余計なものが混ざらないように注意）
