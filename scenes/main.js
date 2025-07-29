@@ -5,6 +5,7 @@ import { SceneMainMenu } from './SceneMainMenu.js';
 import { SceneSelectTribe } from './SceneSelectTribe.js';
 import { SceneSelectMode } from './SceneSelectMode.js'; 
 import { SceneGame } from './SceneGame.js';
+import { SceneSettings } from './SceneSettings.js';
 
 // IndexedDBラッパーの初期化・永続化
 let dbPromise;
@@ -53,7 +54,8 @@ const config = {
     SceneMainMenu,
     SceneSelectTribe,
     SceneSelectMode,
-    SceneGame
+    SceneGame,
+    SceneSettings
   ]
 };
 

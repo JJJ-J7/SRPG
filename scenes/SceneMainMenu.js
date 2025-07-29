@@ -36,6 +36,20 @@ export class SceneMainMenu extends Phaser.Scene {
     // DOMフェードイン
     this.uiParent.fadeIn({ delay: UI.UI_Settings.crossFadeDelay });
 
+    // 2. タイトルロゴ
+    this.ImgLogo = new UI.UI_Img({
+      src: 'Images/blueR.png',
+      parent: this.uiParent.el,
+      position: 'fixed',
+      left: '50%',
+      top: '20%',
+      className: 'sample-ui-image',
+      backgroundColor: 'transparent',
+      scale: 0.5,
+      center: true,
+      scene: this, // 現在のシーンを設定
+    });    
+
     // 1. テキストボタン（中央やや上）
     this.btnNewGame = new UI.UI_TxtBtn({
       text: 'New Game',
@@ -49,7 +63,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '10%',
+      top: '40%',
       zIndex: 1000,
       width: 200,
       scene: this,
@@ -68,7 +82,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '20%',
+      top: '50%',
       zIndex: 1000,
       width: 200,
       scene: this,
@@ -86,7 +100,7 @@ export class SceneMainMenu extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '30%',
+      top: '60%',
       zIndex: 1000,
       width: 200,
       scene: this,

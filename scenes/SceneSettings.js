@@ -83,7 +83,8 @@ export class SceneSettings extends Phaser.Scene {
       parent: this.uiParent.el,
       position: 'fixed',
       left: '50%',
-      top: '40%',
+      top: '30%',
+      width: 200,
       zIndex: 1000,
       scene: this,
     });
@@ -122,7 +123,7 @@ export class SceneSettings extends Phaser.Scene {
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: returnScene // 戻り元シーンへ遷移
+      gotoScene: 'SceneMainMenu' // 戻り元シーンへ遷移
     });
 
   }

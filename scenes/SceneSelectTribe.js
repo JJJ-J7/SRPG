@@ -105,7 +105,7 @@ export class SceneSelectTribe extends Phaser.Scene {
       zIndex: 1000,
       width: 200,
       scene: this,
-      gotoScene: returnScene // 戻り元シーンへ遷移
+      gotoScene: 'SceneMainMenu' // 戻り元シーンへ遷移
     });
 
   }
